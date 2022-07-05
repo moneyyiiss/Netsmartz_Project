@@ -30,10 +30,6 @@ public class MyController {
 	@Autowired
 	private CourseDao courseDao;
 	
-	@GetMapping("/home")
-	public String home() {
-		return "this is home";
-	}
 	
 	//Get the courses
 	@GetMapping("/courses")
@@ -70,8 +66,8 @@ public class MyController {
 		}
 	}
 	
-	//http://localhost:8080/products/filter?name=javaaaaa
-			//http://localhost:9090/products/pagination?page=3&size=3
+	//http://localhost:8080/filter?name=javaaaaa
+			//http://localhost:9090/pagination?page=3&size=3
 			@GetMapping("/pagination")
 			public ResponseEntity<List<Course>> getProductPagination(@RequestParam int page, @RequestParam int size){
 				Pageable pageable = PageRequest.of(page, size);
