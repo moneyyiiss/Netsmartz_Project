@@ -66,13 +66,12 @@ public class MyController {
 		}
 	}
 	
-	//http://localhost:8080/filter?name=javaaaaa
+
 			//http://localhost:9090/pagination?page=3&size=3
 			@GetMapping("/pagination")
 			public ResponseEntity<List<Course>> getProductPagination(@RequestParam int page, @RequestParam int size){
 				Pageable pageable = PageRequest.of(page, size);
 				List<Course> list = courseDao.findAll(pageable).getContent();
 				return ResponseEntity.ok(list);
-//				return ResponseEntity.ok(productRepository.findByName(name));
 			}
 }
